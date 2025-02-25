@@ -1,0 +1,413 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Table Filter Controller Documentation</title>
+	<link rel="stylesheet" type="text/css" href="documentation.css">
+</head>
+<body>
+
+	<h1>Table Filter Controller</h1>
+
+	<p>Table Filter Controller is a <a href="https://stimulus.hotwired.dev/">Stimulus</a> controller for filtering an HTML table.</p>
+
+	<p>Table Filter can filter the rows of a table by the values in each column of that table. The filter can either be in a column itself or it can be outside of the table altogether.</p>
+
+	<h2>Targets</h2>
+
+
+	<table class="atts">
+		<thead>
+			<tr>
+				<th>Target</th>
+				<th>Element(s)</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr>
+				<td>table</td>
+				<td>
+					table<br>
+				</td>
+				<td>
+					The table to filter. Only needed if the data-controller attribute is not on the table.
+				</td>
+			</tr>
+
+			<tr>
+				<td>filter</td>
+				<td>input</td>
+				<td>
+					The input to use as a filter.<br>
+					Table Filter will hide any row where the column doesn't contain the filter text.
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+	<h2>Attributes</h2>
+
+	<h3>HTML Attributes</h3>
+
+	<p>These are standard HTML attributes (with no prefix) used by Table Filter.</p>
+
+	<table class="atts">
+		<thead>
+			<tr>
+				<th>Attribute</th>
+				<th>Element(s)</th>
+				<th>Default</th>
+				<th>Value(s)</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>aria-busy</td>
+				<td>
+					table<br>
+				</td>
+				<td>false</td>
+				<td>
+					true<br>
+					false<br>
+				</td>
+				<td>
+					Table Filter will set this to true any time it is filtering the table.<br>
+					You can use the value in your CSS to indicate that work is in progress.<br>
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+
+	<h3><span class="attprefix">data-</span> Attributes</h3>
+
+	<p>All of these attributes are prefixed with "data-" in the attribute name.</p>
+
+	<table class="atts">
+		<thead>
+			<tr>
+				<th>Attribute</th>
+				<th>Element(s)</th>
+				<th>Default</th>
+				<th>Value(s)</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>controller</td>
+				<td>
+					(any)<br>
+					table<br>
+				</td>
+				<td></td>
+				<td>tablefilter</td>
+				<td>
+					This attribute provides the filter functionality.<br>
+					It should either be placed on the table in which filtering will occur or on an element that contains that table.<br>
+					If it is not placed on the table, then you will need to add a data-tablefilter-target="table" attribute to the table.<br>
+				</td>
+			</tr>
+
+			<tr>
+				<td>action</td>
+				<td>
+					(any)<br>
+					input<br>
+				</td>
+				<td>tablefilter#filter</td>
+				<td>(string)</td>
+				<td>
+					Table Filter will add this to any "filter" target that doesn't have an action.<br>
+					This is what tells Stimulus to take action, but you need not add this yourself unless you want to change the way it works for some reason.<br>
+				</td>
+			</tr>
+
+			<tr>
+				<td>value</td>
+				<td>
+					td<br>
+				</td>
+				<td></td>
+				<td>
+					(string)
+				</td>
+				<td>
+					The value to use for this cell, instead of the contents of the cell.
+				</td>
+			</tr>
+			
+		</tbody>
+	</table>
+
+	<h3><span class="attprefix">data-tablefilter-</span> Attributes</h3>
+
+	<p>All of these attributes are prefixed with "data-tablefilter-" in the attribute name.</p>
+
+	<table class="atts">
+		<thead>
+			<tr>
+				<th>Attribute</th>
+				<th>Element(s)</th>
+				<th>Default</th>
+				<th>Value(s)</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr>
+				<td rowspan="2">target</td>
+				<td>
+					table<br>
+				</td>
+				<td>
+				</td>
+				<td>
+					table
+				</td>
+				<td>
+					The table to filter. Only needed if the data-controller attribute is not on the table.
+				</td>
+			</tr>
+			<tr>
+				<td>
+					input<br>
+				</td>
+				<td>
+				</td>
+				<td>filter</td>
+				<td>
+					The value to filter by.<br>
+				</td>
+			</tr>
+
+			<tr>
+				<td rowspan="3">addfilters</td>
+				<td rowspan="3">
+					table<br>
+				</td>
+				<td rowspan="3">
+					(empty string)
+				</td>
+				<td>
+					
+				</td>
+				<td>
+					Table Filter will use the "addFilter" attributes to decide on adding any given filter for each only if no filter targets exist.
+				</td>
+			</tr>
+			<tr>
+				<td>true</td>
+				<td>
+					Table Filter will add filters for all columns in which the "addfilter" attribute is not false.
+				</td>
+			</tr>
+			<tr>
+				<td>false</td>
+				<td>
+					Table Filter will not add any filters to any columns.
+				</td>
+			</tr>
+
+			<tr>
+				<td rowspan="3">addfilter</td>
+				<td rowspan="3">
+					col<br>
+					th<br>
+				</td>
+				<td rowspan="3">
+					(empty string)
+				</td>
+				<td>
+					
+				</td>
+				<td>
+					Table Filter will add a filter for this column only if no filter targets exist.
+				</td>
+			</tr>
+			<tr>
+				<td>true</td>
+				<td>
+					Table Filter will add a filter for this column.
+				</td>
+			</tr>
+			<tr>
+				<td>false</td>
+				<td>
+					Table Filter will not add a filter for this column.
+				</td>
+			</tr>
+
+			<tr>
+				<td>colindex</td>
+				<td>
+					(filter target)<br>
+				</td>
+				<td>
+					
+				</td>
+				<td>
+					(integer)
+				</td>
+				<td>
+					The index of the column to filter by.<br>
+					0-based.<br>
+					Only needed if the filter target is not in a td or th.
+				</td>
+			</tr>
+
+			<tr>
+				<td rowspan="2">colname</td>
+				<td>
+					col<br>
+					th<br>
+					td<br>
+				</td>
+				<td rowspan="2">
+					
+				</td>
+				<td rowspan="2">
+					(string)
+				</td>
+				<td>
+					The name of a column to allow this column to be referenced by a filter
+				</td>
+			</tr>
+			<tr>
+				<td>
+					(filter target)<br>
+				</td>
+				<td>
+					The name of the column to filter by.<br>
+					Only needed if the filter target is not in a td or th.<br>
+					This is an alternative syntax to colindex.<br>
+					This requires a col/th/td element with a matching colname attribute
+				</td>
+			</tr>
+
+			<tr>
+				<td>colnum</td>
+				<td>
+					(filter target)<br>
+				</td>
+				<td>
+					
+				</td>
+				<td>
+					(integer)
+				</td>
+				<td>
+					The number of the column to filter by.<br>
+					1-based.<br>
+					Only needed if the filter target is not in a td or th.<br>
+					This is an alternative syntax to colindex.
+				</td>
+			</tr>
+
+			<tr>
+				<td>val</td>
+				<td>
+					td<br>
+				</td>
+				<td>
+					
+				</td>
+				<td>
+					(string)
+				</td>
+				<td>
+					The value to use for this cell, instead of the data-value attribute or the contents of the cell.
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+
+	<h2>Events</h2>
+
+	<h3><span class="prefix">tablefilter:</span> Events</h3>
+
+	<p>These are custom events that the controller will fire when it takes certain actions.</p>
+
+	<p>All of these events are prefixed by "tablefilter:".</p>
+
+	<table class="evts">
+		<thead>
+			<tr>
+				<th>Event</th>
+				<th>Parameters</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>initialized</td>
+				<td>
+				</td>
+				<td>
+					Called any time that the controller is initialized.
+				</td>
+			</tr>
+			<tr>
+				<td>connected</td>
+				<td>
+				</td>
+				<td>
+					Called any time that the controller is connected.
+				</td>
+			</tr>
+			<tr>
+				<td>disconnected</td>
+				<td>
+				</td>
+				<td>
+					Called any time that the controller is disconnected.
+				</td>
+			</tr>
+			<tr>
+				<td>filtered</td>
+				<td>
+					<p>target: (the table that is filtered)</p>
+				</td>
+				<td>
+					Called any time that the controller filters the table.
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h2>Methods</h2>
+
+	<p>While it is recommended to use the controller via the attributes listed above, the following methods can be called directly if needed.</p>
+
+	<table class="evts">
+		<thead>
+			<th>Method</th>
+			<th>Returns</th>
+			<th>Arguments</th>
+			<th>Event(s)</th>
+			<th>Description</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>filter</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>
+					<p>Filters the table by the current values of all of the "filter" targets.</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

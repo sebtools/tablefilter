@@ -1,0 +1,744 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="tablefilter.css">
+	<title>Sort Table: Large</title>
+	<style type="text/css">
+	td:nth-child(1) {
+		text-align:right;
+	}
+	</style>
+</head>
+<body>
+
+  <table data-controller="tablefilter">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Salary</th>
+        <th>Join Date</th>
+        <th>Active</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+<!-- Start of 50 dummy rows -->
+<tr>
+	<td>1</td>
+	<td>John Doe</td>
+	<td>35</td>
+	<td>Male</td>
+	<td>New York</td>
+	<td>USA</td>
+	<td>50000</td>
+	<td>2023-01-15</td>
+	<td>Yes</td>
+	<td>john.doe@example.com</td>
+	<td>(123) 456-7890</td>
+	<td>Lorem ipsum dolor sit amet</td>
+  </tr>
+  <tr>
+	<td>2</td>
+	<td>Jane Smith</td>
+	<td>28</td>
+	<td>Female</td>
+	<td>Los Angeles</td>
+	<td>USA</td>
+	<td>60000</td>
+	<td>2022-11-20</td>
+	<td>No</td>
+	<td>jane.smith@example.com</td>
+	<td>(456) 789-0123</td>
+	<td>Consectetur adipiscing elit</td>
+  </tr>
+  <tr>
+	<td>3</td>
+	<td>Michael Johnson</td>
+	<td>45</td>
+	<td>Male</td>
+	<td>Chicago</td>
+	<td>USA</td>
+	<td>70000</td>
+	<td>2022-09-10</td>
+	<td>Yes</td>
+	<td>michael.johnson@example.com</td>
+	<td>(789) 012-3456</td>
+	<td>Sed do eiusmod tempor incididunt</td>
+  </tr>
+  <tr>
+	<td>4</td>
+	<td>Emily Davis</td>
+	<td>32</td>
+	<td>Female</td>
+	<td>Miami</td>
+	<td>USA</td>
+	<td>55000</td>
+	<td>2022-12-05</td>
+	<td>Yes</td>
+	<td>emily.davis@example.com</td>
+	<td>(234) 567-8901</td>
+	<td>Ut enim ad minim veniam</td>
+  </tr>
+  <tr>
+	<td>5</td>
+	<td>Robert Brown</td>
+	<td>40</td>
+	<td>Male</td>
+	<td>Houston</td>
+	<td>USA</td>
+	<td>75000</td>
+	<td>2023-02-28</td>
+	<td>No</td>
+	<td>robert.brown@example.com</td>
+	<td>(345) 678-9012</td>
+	<td>Quis nostrud exercitation ullamco</td>
+  </tr>
+  <tr>
+	<td>6</td>
+	<td>Amanda Wilson</td>
+	<td>29</td>
+	<td>Female</td>
+	<td>Seattle</td>
+	<td>USA</td>
+	<td>62000</td>
+	<td>2022-10-15</td>
+	<td>Yes</td>
+	<td>amanda.wilson@example.com</td>
+	<td>(456) 789-0123</td>
+	<td>Duis aute irure dolor in reprehenderit</td>
+  </tr>
+  <tr>
+	<td>7</td>
+	<td>David Rodriguez</td>
+	<td>38</td>
+	<td>Male</td>
+	<td>San Francisco</td>
+	<td>USA</td>
+	<td>68000</td>
+	<td>2023-03-20</td>
+	<td>No</td>
+	<td>david.rodriguez@example.com</td>
+	<td>(567) 890-1234</td>
+	<td>Excepteur sint occaecat cupidatat</td>
+  </tr>
+  <tr>
+	<td>8</td>
+	<td>Sarah Martinez</td>
+	<td>31</td>
+	<td>Female</td>
+	<td>Atlanta</td>
+	<td>USA</td>
+	<td>57000</td>
+	<td>2022-08-25</td>
+	<td>Yes</td>
+	<td>sarah.martinez@example.com</td>
+	<td>(678) 901-2345</td>
+	<td>Tempor incididunt ut labore et dolore</td>
+  </tr>
+  <tr>
+	<td>9</td>
+	<td>Christopher Lee</td>
+	<td>42</td>
+	<td>Male</td>
+	<td>Dallas</td>
+	<td>USA</td>
+	<td>72000</td>
+	<td>2023-05-12</td>
+	<td>No</td>
+	<td>christopher.lee@example.com</td>
+	<td>(789) 012-3456</td>
+	<td>Excepteur sint occaecat cupidatat non proident</td>
+  </tr>
+  <tr>
+	<td>10</td>
+	<td>Emma Taylor</td>
+	<td>27</td>
+	<td>Female</td>
+	<td>Denver</td>
+	<td>USA</td>
+	<td>58000</td>
+	<td>2022-07-18</td>
+	<td>Yes</td>
+	<td>emma.taylor@example.com</td>
+	<td>(890) 123-4567</td>
+	<td>Ut labore et dolore magna aliqua</td>
+  </tr>
+  <tr>
+	<td>11</td>
+	<td>James Wilson</td>
+	<td>34</td>
+	<td>Male</td>
+	<td>Boston</td>
+	<td>USA</td>
+	<td>65000</td>
+	<td>2023-04-10</td>
+	<td>Yes</td>
+	<td>james.wilson@example.com</td>
+	<td>(901) 234-5678</td>
+	<td>Aliquip ex ea commodo consequat</td>
+  </tr>
+  <tr>
+	<td>12</td>
+	<td>Olivia Garcia</td>
+	<td>30</td>
+	<td>Female</td>
+	<td>Philadelphia</td>
+	<td>USA</td>
+	<td>59000</td>
+	<td>2022-06-05</td>
+	<td>No</td>
+	<td>olivia.garcia@example.com</td>
+	<td>(012) 345-6789</td>
+	<td>Voluptate velit esse cillum dolore</td>
+  </tr>
+  <tr>
+	<td>13</td>
+	<td>William Clark</td>
+	<td>39</td>
+	<td>Male</td>
+	<td>Phoenix</td>
+	<td>USA</td>
+	<td>71000</td>
+	<td>2023-07-15</td>
+	<td>Yes</td>
+	<td>william.clark@example.com</td>
+	<td>(123) 456-7890</td>
+	<td>Cillum dolore eu fugiat nulla pariatur</td>
+  </tr>
+  <tr>
+	<td>14</td>
+	<td>Sophia Lewis</td>
+	<td>26</td>
+	<td>Female</td>
+	<td>Portland</td>
+	<td>USA</td>
+	<td>60000</td>
+	<td>2022-08-20</td>
+	<td>No</td>
+	<td>sophia.lewis@example.com</td>
+	<td>(234) 567-8901</td>
+	<td>Excepteur sint occaecat cupidatat non proident</td>
+  </tr>
+  <tr>
+	<td>15</td>
+	<td>Alexander Turner</td>
+	<td>37</td>
+	<td>Male</td>
+	<td>San Diego</td>
+	<td>USA</td>
+	<td>69000</td>
+	<td>2023-01-30</td>
+	<td>Yes</td>
+	<td>alexander.turner@example.com</td>
+	<td>(345) 678-9012</td>
+	<td>Tempor incididunt ut labore et dolore magna aliqua</td>
+  </tr>
+  <tr>
+	<td>16</td>
+	<td>Isabella Hernandez</td>
+	<td>33</td>
+	<td>Female</td>
+	<td>Orlando</td>
+	<td>USA</td>
+	<td>62000</td>
+	<td>2023-06-20</td>
+	<td>No</td>
+	<td>isabella.hernandez@example.com</td>
+	<td>(456) 789-0123</td>
+	<td>Aliquam erat volutpat</td>
+  </tr>
+  <tr>
+	<td>17</td>
+	<td>Ethan Martin</td>
+	<td>36</td>
+	<td>Male</td>
+	<td>Las Vegas</td>
+	<td>USA</td>
+	<td>68000</td>
+	<td>2023-03-15</td>
+	<td>Yes</td>
+	<td>ethan.martin@example.com</td>
+	<td>(567) 890-1234</td>
+	<td>Velit esse cillum dolore eu fugiat</td>
+  </tr>
+  <tr>
+	<td>18</td>
+	<td>Mia Thompson</td>
+	<td>29</td>
+	<td>Female</td>
+	<td>Charlotte</td>
+	<td>USA</td>
+	<td>58000</td>
+	<td>2022-12-10</td>
+	<td>No</td>
+	<td>mia.thompson@example.com</td>
+	<td>(678) 901-2345</td>
+	<td>Excepteur sint occaecat cupidatat non proident</td>
+  </tr>
+  <tr>
+	<td>19</td>
+	<td>Daniel White</td>
+	<td>41</td>
+	<td>Male</td>
+	<td>San Antonio</td>
+	<td>USA</td>
+	<td>72000</td>
+	<td>2023-09-05</td>
+	<td>Yes</td>
+	<td>daniel.white@example.com</td>
+	<td>(789) 012-3456</td>
+	<td>Ut enim ad minim veniam</td>
+  </tr>
+  <tr>
+	<td>20</td>
+	<td>Charlotte Rodriguez</td>
+	<td>27</td>
+	<td>Female</td>
+	<td>Minneapolis</td>
+	<td>USA</td>
+	<td>59000</td>
+	<td>2022-11-18</td>
+	<td>No</td>
+	<td>charlotte.rodriguez@example.com</td>
+	<td>(890) 123-4567</td>
+	<td>Quis nostrud exercitation ullamco</td>
+  </tr>
+  <tr>
+	<td>21</td>
+	<td>Liam Nguyen</td>
+	<td>31</td>
+	<td>Male</td>
+	<td>Toronto</td>
+	<td>Canada</td>
+	<td>85000</td>
+	<td>2023-08-10</td>
+	<td>Yes</td>
+	<td>liam.nguyen@example.com</td>
+	<td>(123) 456-7890</td>
+	<td>Lorem ipsum dolor sit amet</td>
+  </tr>
+  <tr>
+	<td>22</td>
+	<td>Sofia Kim</td>
+	<td>29</td>
+	<td>Female</td>
+	<td>Seoul</td>
+	<td>South Korea</td>
+	<td>75000</td>
+	<td>2023-07-25</td>
+	<td>No</td>
+	<td>sofia.kim@example.com</td>
+	<td>(234) 567-8901</td>
+	<td>Consectetur adipiscing elit</td>
+  </tr>
+  <tr>
+	<td>23</td>
+	<td>Mason Patel</td>
+	<td>33</td>
+	<td>Male</td>
+	<td>Mumbai</td>
+	<td>India</td>
+	<td>45000</td>
+	<td>2023-06-15</td>
+	<td>Yes</td>
+	<td>mason.patel@example.com</td>
+	<td>(345) 678-9012</td>
+	<td>Sed do eiusmod tempor incididunt</td>
+  </tr>
+  <tr>
+	<td>24</td>
+	<td>Amelia González</td>
+	<td>36</td>
+	<td>Female</td>
+	<td>Madrid</td>
+	<td>Spain</td>
+	<td>60000</td>
+	<td>2023-05-30</td>
+	<td>No</td>
+	<td>amelia.gonzalez@example.com</td>
+	<td>(456) 789-0123</td>
+	<td>Ut enim ad minim veniam</td>
+  </tr>
+  <tr>
+	<td>25</td>
+	<td>Oliver Müller</td>
+	<td>28</td>
+	<td>Male</td>
+	<td>Berlin</td>
+	<td>Germany</td>
+	<td>70000</td>
+	<td>2023-04-20</td>
+	<td>Yes</td>
+	<td>oliver.mueller@example.com</td>
+	<td>(567) 890-1234</td>
+	<td>Quis nostrud exercitation ullamco</td>
+  </tr>
+  <tr>
+	<td>26</td>
+	<td>Emma Lee</td>
+	<td>35</td>
+	<td>Female</td>
+	<td>Sydney</td>
+	<td>Australia</td>
+	<td>120000</td>
+	<td>2023-03-10</td>
+	<td>Yes</td>
+	<td>emma.lee@example.com</td>
+	<td>(123) 456-7890</td>
+	<td>Lorem ipsum dolor sit amet</td>
+  </tr>
+  <tr>
+	<td>27</td>
+	<td>Lucas Wang</td>
+	<td>32</td>
+	<td>Male</td>
+	<td>Shanghai</td>
+	<td>China</td>
+	<td>110000</td>
+	<td>2023-02-25</td>
+	<td>No</td>
+	<td>lucas.wang@example.com</td>
+	<td>(234) 567-8901</td>
+	<td>Consectetur adipiscing elit</td>
+  </tr>
+  <tr>
+	<td>28</td>
+	<td>Charlotte Dubois</td>
+	<td>40</td>
+	<td>Female</td>
+	<td>Paris</td>
+	<td>France</td>
+	<td>130000</td>
+	<td>2023-01-15</td>
+	<td>Yes</td>
+	<td>charlotte.dubois@example.com</td>
+	<td>(345) 678-9012</td>
+	<td>Sed do eiusmod tempor incididunt</td>
+  </tr>
+  <tr>
+	<td>29</td>
+	<td>William O'Connor</td>
+	<td>37</td>
+	<td>Male</td>
+	<td>Dublin</td>
+	<td>Ireland</td>
+	<td>125000</td>
+	<td>2022-12-30</td>
+	<td>No</td>
+	<td>william.oconnor@example.com</td>
+	<td>(456) 789-0123</td>
+	<td>Ut enim ad minim veniam</td>
+  </tr>
+  <tr>
+	<td>30</td>
+	<td>Isabella Rossi</td>
+	<td>31</td>
+	<td>Female</td>
+	<td>Rome</td>
+	<td>Italy</td>
+	<td>140000</td>
+	<td>2022-11-10</td>
+	<td>Yes</td>
+	<td>isabella.rossi@example.com</td>
+	<td>(567) 890-1234</td>
+	<td>Quis nostrud exercitation ullamco</td>
+  </tr>
+  <tr>
+	<td>31</td>
+	<td>Jack Brown</td>
+	<td>38</td>
+	<td>Male</td>
+	<td>Toronto</td>
+	<td>Canada</td>
+	<td>85,000</td>
+	<td>2023-08-10</td>
+	<td>Yes</td>
+	<td>jack.brown@example.com</td>
+	<td>(123) 456-7890</td>
+	<td>Lorem ipsum dolor sit amet</td>
+  </tr>
+  <tr>
+	<td>32</td>
+	<td>Lily Wang</td>
+	<td>29</td>
+	<td>Female</td>
+	<td>Beijing</td>
+	<td>China</td>
+	<td>75,000</td>
+	<td>2023-07-25</td>
+	<td>No</td>
+	<td>lily.wang@example.com</td>
+	<td>(234) 567-8901</td>
+	<td>Consectetur adipiscing elit</td>
+  </tr>
+  <tr>
+	<td>33</td>
+	<td>Mason Kumar</td>
+	<td>33</td>
+	<td>Male</td>
+	<td>Mumbai</td>
+	<td>India</td>
+	<td>45,000</td>
+	<td>2023-06-15</td>
+	<td>Yes</td>
+	<td>mason.kumar@example.com</td>
+	<td>(345) 678-9012</td>
+	<td>Sed do eiusmod tempor incididunt</td>
+  </tr>
+  <tr>
+	<td>34</td>
+	<td>Chloe Dubois</td>
+	<td>36</td>
+	<td>Female</td>
+	<td>Paris</td>
+	<td>France</td>
+	<td>60,000</td>
+	<td>2023-05-30</td>
+	<td>No</td>
+	<td>chloe.dubois@example.com</td>
+	<td>(456) 789-0123</td>
+	<td>Ut enim ad minim veniam</td>
+  </tr>
+  <tr>
+	<td>35</td>
+	<td>Logan O'Connell</td>
+	<td>28</td>
+	<td>Male</td>
+	<td>Dublin</td>
+	<td>Ireland</td>
+	<td>72,000</td>
+	<td>2022-12-30</td>
+	<td>Yes</td>
+	<td>logan.oconnell@example.com</td>
+	<td>(567) 890-1234</td>
+	<td>Quis nostrud exercitation ullamco</td>
+  </tr>
+  <tr>
+	<td>36</td>
+	<td>Evelyn Johnson</td>
+	<td>105</td>
+	<td>Female</td>
+	<td>New York</td>
+	<td>USA</td>
+	<td>75000</td>
+	<td>1919-05-12</td>
+	<td>Yes</td>
+	<td>evelyn.johnson@example.com</td>
+	<td>(123) 456-7890</td>
+	<td>Lorem ipsum dolor sit amet</td>
+  </tr>
+  <tr>
+	<td>37</td>
+	<td>William Smith</td>
+	<td>101</td>
+	<td>Male</td>
+	<td>Los Angeles</td>
+	<td>USA</td>
+	<td>80000</td>
+	<td>1923-08-20</td>
+	<td>No</td>
+	<td>william.smith@example.com</td>
+	<td>(234) 567-8901</td>
+	<td>Consectetur adipiscing elit</td>
+  </tr>
+  <tr>
+	<td>38</td>
+	<td>Olivia Martinez</td>
+	<td>98</td>
+	<td>Female</td>
+	<td>Chicago</td>
+	<td>USA</td>
+	<td>70000</td>
+	<td>1926-03-15</td>
+	<td>Yes</td>
+	<td>olivia.martinez@example.com</td>
+	<td>(345) 678-9012</td>
+	<td>Sed do eiusmod tempor incididunt</td>
+  </tr>
+  <tr>
+	<td>39</td>
+	<td>James Brown</td>
+	<td>103</td>
+	<td>Male</td>
+	<td>Miami</td>
+	<td>USA</td>
+	<td>90000</td>
+	<td>1919-11-30</td>
+	<td>No</td>
+	<td>james.brown@example.com</td>
+	<td>(456) 789-0123</td>
+	<td>Ut enim ad minim veniam</td>
+  </tr>
+  <tr>
+	<td>40</td>
+	<td>Emma Taylor</td>
+	<td>100</td>
+	<td>Female</td>
+	<td>Seattle</td>
+	<td>USA</td>
+	<td>85000</td>
+	<td>1924-07-18</td>
+	<td>Yes</td>
+	<td>emma.taylor@example.com</td>
+	<td>(567) 890-1234</td>
+	<td>Quis nostrud exercitation ullamco</td>
+  </tr>
+  <tr>
+	<td>41</td>
+	<td>Noah Johnson</td>
+	<td>40</td>
+	<td>Male</td>
+	<td>New York</td>
+	<td>USA</td>
+	<td>1500000</td>
+	<td>1984-12-05</td>
+	<td>Yes</td>
+	<td>noah.johnson@example.com</td>
+	<td>(123) 456-7890</td>
+	<td>Lorem ipsum dolor sit amet</td>
+  </tr>
+  <tr>
+	<td>42</td>
+	<td>Emma Smith</td>
+	<td>35</td>
+	<td>Female</td>
+	<td>Los Angeles</td>
+	<td>USA</td>
+	<td>2000000</td>
+	<td>1989-11-20</td>
+	<td>No</td>
+	<td>emma.smith@example.com</td>
+	<td>(234) 567-8901</td>
+	<td>Consectetur adipiscing elit</td>
+  </tr>
+  <tr>
+	<td>43</td>
+	<td>Liam Brown</td>
+	<td>45</td>
+	<td>Male</td>
+	<td>Chicago</td>
+	<td>USA</td>
+	<td>1800000</td>
+	<td>1979-09-10</td>
+	<td>Yes</td>
+	<td>liam.brown@example.com</td>
+	<td>(345) 678-9012</td>
+	<td>Sed do eiusmod tempor incididunt</td>
+  </tr>
+  <tr>
+	<td>44</td>
+	<td>Olivia Garcia</td>
+	<td>38</td>
+	<td>Female</td>
+	<td>Miami</td>
+	<td>USA</td>
+	<td>2200000</td>
+	<td>1984-12-05</td>
+	<td>No</td>
+	<td>olivia.garcia@example.com</td>
+	<td>(456) 789-0123</td>
+	<td>Ut enim ad minim veniam</td>
+  </tr>
+  <tr>
+	<td>45</td>
+	<td>Aiden Martinez</td>
+	<td>42</td>
+	<td>Male</td>
+	<td>Seattle</td>
+	<td>USA</td>
+	<td>1700000</td>
+	<td>1980-09-15</td>
+	<td>Yes</td>
+	<td>aiden.martinez@example.com</td>
+	<td>(567) 890-1234</td>
+	<td>Quis nostrud exercitation ullamco</td>
+  </tr>
+  <tr>
+	<td>46</td>
+	<td>Sophia Anderson</td>
+	<td>37</td>
+	<td>Female</td>
+	<td>San Francisco</td>
+	<td>USA</td>
+	<td>2,500,000</td>
+	<td>1985-07-22</td>
+	<td>Yes</td>
+	<td>sophia.anderson@example.com</td>
+	<td>(123) 456-7890</td>
+	<td>Lorem ipsum dolor sit amet</td>
+  </tr>
+  <tr>
+	<td>47</td>
+	<td>Jackson Wilson</td>
+	<td>41</td>
+	<td>Male</td>
+	<td>Boston</td>
+	<td>USA</td>
+	<td>3,000,000</td>
+	<td>1981-04-17</td>
+	<td>No</td>
+	<td>jackson.wilson@example.com</td>
+	<td>(234) 567-8901</td>
+	<td>Consectetur adipiscing elit</td>
+  </tr>
+  <tr>
+	<td>48</td>
+	<td>Amelia Miller</td>
+	<td>39</td>
+	<td>Female</td>
+	<td>Washington D.C.</td>
+	<td>USA</td>
+	<td>2,200,000</td>
+	<td>1983-11-29</td>
+	<td>Yes</td>
+	<td>amelia.miller@example.com</td>
+	<td>(345) 678-9012</td>
+	<td>Sed do eiusmod tempor incididunt</td>
+  </tr>
+  <tr>
+	<td>49</td>
+	<td>Michael Brown</td>
+	<td>43</td>
+	<td>Male</td>
+	<td>Denver</td>
+	<td>USA</td>
+	<td>2,800,000</td>
+	<td>1979-08-12</td>
+	<td>No</td>
+	<td>michael.brown@example.com</td>
+	<td>(456) 789-0123</td>
+	<td>Ut enim ad minim veniam</td>
+  </tr>
+  <tr>
+	<td>50</td>
+	<td>Olivia Smith</td>
+	<td>36</td>
+	<td>Female</td>
+	<td>Chicago</td>
+	<td>USA</td>
+	<td>2,700,000</td>
+	<td>1986-05-05</td>
+	<td>Yes</td>
+	<td>olivia.smith@example.com</td>
+	<td>(567) 890-1234</td>
+	<td>Quis nostrud exercitation ullamco</td>
+  </tr>
+	  
+  
+    </tbody>
+  </table>
+
+  <script src="js/stimulus.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/tablefilter_controller.js"></script>
+
+</body>
+</html>

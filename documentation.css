@@ -1,0 +1,45 @@
+.planned, .planned * {
+	background-color:lightcoral;
+	background-color:#f39393;
+	background-color:#FFAA33;
+	background-color: #FFBF00;
+}
+.prefix {
+	background-color: #e3e3e3;
+}
+
+table.atts, table.evts {
+	border-collapse: collapse;
+	border: 2px solid gray;
+	width:1000px;
+}
+
+table.atts th,
+table.atts td,
+table.evts th,
+table.evts td {
+    padding: 6px;
+	padding-right:10px;
+	text-align:left;
+    vertical-align: top;
+	border: 1px solid gray; 
+}
+
+table.atts th p,
+table.atts td p,
+table.evts th p,
+table.evts td p {
+	margin-top:0;
+}
+
+table.atts th:nth-child(1),
+table.atts td:nth-child(1),
+table.atts th:nth-child(2),
+table.atts td:nth-child(2),
+table.atts th:nth-child(3),
+table.atts td:nth-child(3),
+table.atts th:nth-child(4),
+table.atts td:nth-child(4) {
+	white-space: nowrap;
+}
+
