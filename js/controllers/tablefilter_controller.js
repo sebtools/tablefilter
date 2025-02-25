@@ -65,8 +65,6 @@ application.register('tablefilter', class extends Stimulus.Controller {
 			() => this._filter()
 		);
 
-		this.dispatch("filtered");
-
 	}
 
 	getCellValue(td) {
@@ -161,8 +159,11 @@ application.register('tablefilter', class extends Stimulus.Controller {
 				let cell = row.cells[filter.colidx];
 				return cell && !this.getCellValue(cell).toLowerCase().includes(filter.value.toLowerCase());
 			});
-			row.style.display = shouldHide ? 'none' : '';
+			//row.style.display = shouldHide ? 'none' : '';
+			row.hidden = shouldHide;
 		});
+
+		this.dispatch("filtered");
 
 	}
 
